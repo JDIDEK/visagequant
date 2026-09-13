@@ -1,0 +1,60 @@
+name: visagequant
+
+services:
+  api:
+    build:
+      context: ./apps/analysis-engine
+      dockerfile: Dockerfile
+    environment:
+      VISAGEQUANT_ALLOWED_ORIGINS: http://127.0.0.1:1420,http://localhost:1420
+      PYTHONPATH: /app/src
+      PYTHONUNBUFFERED: "1"
+    command:
+      - python
+      - -m
+      - uvicorn
+      - visagequant_engine.api:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8765"
+      - --reload
+    init: true
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - ./apps/analysis-engine:/app
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health', timeout=2)
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/desktop/Dockerfile
+      target: development
+    environment:
+      VITE_API_URL: http://127.0.0.1:8765
+    command:
+      - sh
+      - -lc
+      - pnpm --dir /workspace install --frozen-lockfile && pnpm dev --host 0.0.0.0
+    depends_on:
+      api:
+        condition: service_healthy
+    init: true
+    ports:
+      - "127.0.0.1:1420:1420"
+    volumes:
+      - ./apps/desktop:/workspace/apps/desktop
+      - desktop_node_modules:/workspace/apps/desktop/node_modules
+
+volumes:
+  desktop_node_modules:

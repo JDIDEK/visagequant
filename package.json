@@ -1,0 +1,12 @@
+{
+  "name": "visagequant",
+  "private": true,
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "packageManager": "pnpm@12.4.1",
+  "scripts": {
+    "dev": "pnpm --filter @visagequant/desktop dev",
+    "build": "pnpm --filter @visagequant/desktop build",
+    "desktop": "pnpm --filter @visagequant/desktop tauri dev"
+  }
+}

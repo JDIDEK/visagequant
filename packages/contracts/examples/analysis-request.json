@@ -1,0 +1,24 @@
+{
+  "source": "synthetic-demo",
+  "quality_signals": {
+    "blur_score": 0.94,
+    "exposure_score": 0.91,
+    "face_coverage": 0.44,
+    "yaw_degrees": 1.2,
+    "pitch_degrees": -0.8,
+    "roll_degrees": 0.5,
+    "occlusion_score": 0.02,
+    "neutral_expression_score": 0.96
+  },
+  "landmarks": {
+    "face_left": { "x": 100, "y": 250, "confidence": 0.98 },
+    "face_right": { "x": 500, "y": 250, "confidence": 0.98 },
+    "hairline_mid": { "x": 300, "y": 50, "confidence": 0.92 },
+    "chin_mid": { "x": 300, "y": 650, "confidence": 0.97 },
+    "left_eye_inner": { "x": 250, "y": 250, "confidence": 0.99 },
+    "left_eye_outer": { "x": 180, "y": 242, "confidence": 0.98 },
+    "right_eye_inner": { "x": 350, "y": 250, "confidence": 0.99 },
+    "right_eye_outer": { "x": 420, "y": 242, "confidence": 0.98 }
+  }
+}
+

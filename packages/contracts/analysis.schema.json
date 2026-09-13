@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visagequant.local/contracts/analysis.schema.json",
+  "title": "VisageQuant analysis response",
+  "type": "object",
+  "required": ["schema_version", "pipeline_version", "status", "quality", "measurements", "provenance"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "pipeline_version": { "type": "string" },
+    "status": { "enum": ["completed", "rejected"] },
+    "quality": {
+      "type": "object",
+      "required": ["accepted", "score", "failures"],
+      "properties": {
+        "accepted": { "type": "boolean" },
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "failures": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "value", "unit", "confidence", "method_version", "unavailable_reason"],
+        "properties": {
+          "key": { "type": "string" },
+          "label": { "type": "string" },
+          "value": { "type": ["number", "null"] },
+          "unit": { "enum": ["ratio", "degrees", "percent", "millimeters"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "method_version": { "type": "string" },
+          "unavailable_reason": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": false
+}
