@@ -1,5 +1,7 @@
 # VisageQuant
 
+[![CI](https://github.com/JDIDEK/visagequant/actions/workflows/ci.yml/badge.svg)](https://github.com/JDIDEK/visagequant/actions/workflows/ci.yml)
+
 Alternative open source, locale et transparente aux services payants d'analyse
 faciale. VisageQuant aide chacun a comprendre sa morphologie et a explorer des
 ameliorations personnelles accessibles, sans verrouiller les resultats derriere un
@@ -22,6 +24,8 @@ mesures, et un LLM eventuel ne fait qu'expliquer les resultats.
 
 La [charte produit](docs/PRODUCT_CHARTER.md) definit les engagements de gratuite,
 de dignite, de confidentialite et d'independance vis-a-vis des produits existants.
+Le code source et le suivi du projet sont publics sur
+[GitHub](https://github.com/JDIDEK/visagequant).
 
 ## Architecture
 

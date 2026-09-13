@@ -21,7 +21,7 @@ Cette checklist est l'ordre de marche du projet. Ne coche une case que lorsqu'un
 - [x] Creer le premier commit local apres choix du nom et de la licence.
 - [x] Choisir VisageQuant, la licence AGPL-3.0-or-later et la politique de contribution.
 - [x] Ajouter le workflow CI : lint, formatage, types, tests Python, tests UI et audits.
-- [ ] Publier le depot et verifier la premiere execution du workflow CI distant.
+- [x] Publier le depot et verifier la premiere execution du workflow CI distant.
 
 ## M1 - Acquisition fiable
 
