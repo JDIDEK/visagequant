@@ -26,6 +26,8 @@ La [charte produit](docs/PRODUCT_CHARTER.md) definit les engagements de gratuite
 de dignite, de confidentialite et d'independance vis-a-vis des produits existants.
 Le code source et le suivi du projet sont publics sur
 [GitHub](https://github.com/JDIDEK/visagequant).
+Le [protocole d'acquisition](docs/ACQUISITION_PROTOCOL.md) decrit les cinq vues et
+les conditions attendues pour le premier jalon fonctionnel.
 
 ## Architecture
 

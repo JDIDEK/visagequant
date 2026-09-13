@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://visagequant.local/contracts/acquisition-protocol.schema.json",
+  "title": "VisageQuant acquisition protocol",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "status",
+    "capture_modes",
+    "ordered_views",
+    "conditions",
+    "measurements_blocked_until_complete"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "protocol_version": { "const": "acquisition-1.0.0" },
+    "status": { "const": "draft" },
+    "capture_modes": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "guided_video" },
+        { "const": "still_images" }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "ordered_views": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "nominal_yaw_degrees",
+          "yaw_tolerance_degrees",
+          "validation_status"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "front",
+              "three_quarter_left",
+              "profile_left",
+              "three_quarter_right",
+              "profile_right"
+            ]
+          },
+          "label": { "type": "string", "minLength": 1 },
+          "nominal_yaw_degrees": { "type": "integer", "minimum": -90, "maximum": 90 },
+          "yaw_tolerance_degrees": { "type": "null" },
+          "validation_status": { "const": "pending_calibration" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "instruction", "validation_status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "instruction": { "type": "string", "minLength": 1 },
+          "validation_status": { "const": "pending_calibration" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "measurements_blocked_until_complete": { "const": true }
+  },
+  "additionalProperties": false
+}

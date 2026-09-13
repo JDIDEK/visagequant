@@ -25,7 +25,7 @@ Cette checklist est l'ordre de marche du projet. Ne coche une case que lorsqu'un
 
 ## M1 - Acquisition fiable
 
-- [ ] Definir le protocole utilisateur : frontal, profils, trois-quarts et video guidee.
+- [x] Definir le protocole utilisateur : frontal, profils, trois-quarts et video guidee.
 - [ ] Definir distance, focale equivalente, eclairage, expression et cadrage acceptes.
 - [ ] Importer images JPEG/PNG/HEIC sans perte involontaire de metadonnees.
 - [ ] Importer une video locale et extraire les frames candidates.

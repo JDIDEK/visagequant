@@ -6,6 +6,7 @@ from typing import Any
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .acquisition import get_acquisition_protocol
 from .pipeline import analyze_front_view
 
 app = FastAPI(title="VisageQuant local engine", version="0.1.0")
@@ -31,6 +32,11 @@ app.add_middleware(
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/v1/acquisition-protocol")
+def acquisition_protocol() -> dict[str, Any]:
+    return get_acquisition_protocol().to_dict()
 
 
 @app.post("/v1/analyses/front")

@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_version": "acquisition-1.0.0",
+  "status": "draft",
+  "capture_modes": ["guided_video", "still_images"],
+  "ordered_views": [
+    {
+      "id": "front",
+      "label": "Face",
+      "nominal_yaw_degrees": 0,
+      "yaw_tolerance_degrees": null,
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "three_quarter_left",
+      "label": "Trois-quarts gauche",
+      "nominal_yaw_degrees": -45,
+      "yaw_tolerance_degrees": null,
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "profile_left",
+      "label": "Profil gauche",
+      "nominal_yaw_degrees": -90,
+      "yaw_tolerance_degrees": null,
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "three_quarter_right",
+      "label": "Trois-quarts droit",
+      "nominal_yaw_degrees": 45,
+      "yaw_tolerance_degrees": null,
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "profile_right",
+      "label": "Profil droit",
+      "nominal_yaw_degrees": 90,
+      "yaw_tolerance_degrees": null,
+      "validation_status": "pending_calibration"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "camera_position",
+      "instruction": "Garder la camera a hauteur des yeux et immobile pendant la sequence.",
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "distance_and_framing",
+      "instruction": "Garder la distance stable et le visage entierement visible sans zoom numerique.",
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "lighting",
+      "instruction": "Utiliser une lumiere diffuse et uniforme sans zone surexposee ni ombre dure.",
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "expression",
+      "instruction": "Garder une expression neutre, la bouche fermee et les yeux visibles.",
+      "validation_status": "pending_calibration"
+    },
+    {
+      "id": "occlusion",
+      "instruction": "Degager les contours utiles du visage et retirer les objets qui les masquent.",
+      "validation_status": "pending_calibration"
+    }
+  ],
+  "measurements_blocked_until_complete": true
+}
