@@ -48,10 +48,10 @@ jobs:
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
       - name: Lint
-        run: pnpm --filter @facemetric/desktop lint
+        run: pnpm --dir apps/desktop lint
       - name: Test
-        run: pnpm --filter @facemetric/desktop test
+        run: pnpm --dir apps/desktop test
       - name: Type check and build
-        run: pnpm --filter @facemetric/desktop build
+        run: pnpm --dir apps/desktop build
       - name: Audit dependencies
         run: pnpm audit --audit-level high
